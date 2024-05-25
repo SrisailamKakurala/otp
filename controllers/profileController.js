@@ -1,7 +1,7 @@
 const Profile = require('../models/Profile');
 
 exports.storeProfile = async (req, res) => {
-  console.log('Request Body:', req.body);
+  // console.log('Request Body:', req.body);
   try {
     const profileData = req.body;
     // Validate the data before creating a new profile
