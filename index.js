@@ -14,7 +14,13 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  tls: true,
+  tlsAllowInvalidCertificates: false,
+  tlsAllowInvalidHostnames: false,
+})
 
 app.use('/api/profile', profileRoutes);
 app.use('/api/otp', otpRoutes);
