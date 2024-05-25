@@ -14,10 +14,7 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 
-mongoose.connect(process.env.MONGO_URL, {
-    tls: true,
-    tlsAllowInvalidCertificates: true // Only use this for testing purposes, not in production
-})
+mongoose.connect(process.env.MONGO_URL)
 
 app.use('/api/profile', profileRoutes);
 app.use('/api/otp', otpRoutes);
